@@ -65,9 +65,9 @@ kabupaten_list = df['Kab/Kota'].unique()
 st.header("BPPP Tegal")
 
 # Sidebar untuk navigasi menu
-menu = st.sidebar.radio("Pilih Menu", ["Cek NIK dan Nama yang Belum Terdaftar", "Cari Nama Yang Sama per Kabupaten"])
+menu = st.sidebar.radio("Pilih Menu", ["Cek NIK dan Nama yang Belum Masuk Database", "Cari Nama Yang Sama per Kabupaten"])
 
-if menu == "Cek NIK dan Nama yang Belum Terdaftar":
+if menu == "Cek NIK dan Nama yang Belum Masuk Database":
     st.subheader("Cek NIK dan Nama yang Belum Terdaftar")
     
     # Dropdown untuk Kabupaten
