@@ -74,7 +74,8 @@ if menu == "Cek NIK dan Nama yang Belum Terdaftar":
     kabupaten_choice = st.selectbox("Pilih Kabupaten", kabupaten_list, key="kabupaten_choice")
     
     # Tombol untuk mengecek NIK dan Nama yang belum terdaftar
-    if st.button("Cek NIK dan Nama yang Belum Terdaftar"):
+    cek_nik_button = st.button("Cek NIK dan Nama yang Belum Terdaftar")
+    if cek_nik_button:
         unregistered_data = check_unregistered_nik_and_names(kabupaten_choice, df)
         
         if unregistered_data:
@@ -87,14 +88,15 @@ if menu == "Cek NIK dan Nama yang Belum Terdaftar":
         else:
             st.write(f"Semua NIK sudah terdaftar di database untuk Kabupaten {kabupaten_choice}.")
 
-elif menu == "Cari Nama Duplikat per Kabupaten":
-    st.subheader("Cari Nama Duplikat per Kabupaten")
+elif menu == "Cari Nama Yang Sama per Kabupaten":
+    st.subheader("Cari Nama Yang Sama per Kabupaten")
     
     # Dropdown untuk Kabupaten
     kabupaten_choice = st.selectbox("Pilih Kabupaten", kabupaten_list, key="kabupaten_duplikat")
     
     # Tombol untuk mencari nama yang sama (duplikat)
-    if st.button("Cari Nama Duplikat"):
+    cari_duplikat_button = st.button("Cari Nama Duplikat")
+    if cari_duplikat_button:
         duplicates = find_duplicates_by_kabupaten(df, kabupaten_choice)
         
         if duplicates.size > 0:
@@ -103,3 +105,4 @@ elif menu == "Cari Nama Duplikat per Kabupaten":
                 st.write(f"- {name}")
         else:
             st.write(f"Tidak ada nama duplikat di Kabupaten {kabupaten_choice}.")
+
