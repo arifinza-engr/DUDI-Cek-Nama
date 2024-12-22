@@ -62,7 +62,7 @@ df = load_data()
 kabupaten_list = df['Kab/Kota'].unique()
 
 # HEADER
-st.header("Aplikasi Pendataan DUDI")
+st.header("BPPP Tegal")
 
 # Sidebar untuk navigasi menu
 menu = st.sidebar.radio("Pilih Menu", ["Cek NIK dan Nama yang Belum Terdaftar", "Cari Nama Yang Sama per Kabupaten"])
